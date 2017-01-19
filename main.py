@@ -5,13 +5,12 @@ class Index(webapp2.RequestHandler):
 
     def getRandomMovie(self):
 
-        # TODO: make a list with at least 5 movie titles
+        # make a list with at least 5 movie titles
         movieList = ["Star Trek", "Titanic", "Scott Pilgrim vs. The World", "The Lord of the Rings", "Star Wars", "The Big Lebowski", "The Matrix", "The Cabin in the Woods", "Indiana Jones", "Casablanca", "The Picture of Dorian Gray", "WarGames", "Hackers", "Back to the Future", "Ferris Bueller's Day Off", "Flash Gordon", "Ghostbusters", "Halloween", "Jurassic Park", "Paranormal Activity", "Shrek"]
 
-        # TODO: randomly choose one of the movies, and return it
-        todaysMovie = movieList[random.randrange(0, len(movieList))]
+        movieSelection = movieList[random.randrange(0, len(movieList))]
 
-        return todaysMovie
+        return movieSelection
 
     def get(self):
         # choose a movie by invoking our new function
@@ -24,7 +23,7 @@ class Index(webapp2.RequestHandler):
 
         self.response.write(content)
 
-        # TODO: pick a different random movie, and display it under
+        # pick a different random movie, and display it under
         content2 = "<h1>Tomorrow's Movie</h1>"
         content2 += "<p>" + tomorrowsMovie + "</p>"
 
