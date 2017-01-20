@@ -6,9 +6,11 @@ class Index(webapp2.RequestHandler):
     def getRandomMovie(self):
 
         # make a list with at least 5 movie titles
+
         movieList = ["Star Trek", "Titanic", "Scott Pilgrim vs. The World", "The Lord of the Rings", "Star Wars", "The Big Lebowski", "The Matrix", "The Cabin in the Woods", "Indiana Jones", "Casablanca", "The Picture of Dorian Gray", "WarGames", "Hackers", "Back to the Future", "Ferris Bueller's Day Off", "Flash Gordon", "Ghostbusters", "Halloween", "Jurassic Park", "Paranormal Activity", "Shrek"]
 
         movieSelection = movieList[random.randrange(0, len(movieList))]
+        movieList.remove(movieSelection)
 
         return movieSelection
 
