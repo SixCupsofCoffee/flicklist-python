@@ -48,6 +48,7 @@ class Index(webapp2.RequestHandler):
     """
 
     def get(self):
+<<<<<<< HEAD
 
         edit_header = "<h3>Edit My Watchlist</h3>"
 
@@ -138,6 +139,14 @@ class CrossOffMovie(webapp2.RequestHandler):
 
             # redirect to homepage, and include error as a query parameter in the URL
             self.redirect("/?error=" + error_escaped)
+=======
+        # choose a movie by invoking our new function
+        movie = self.getRandomMovie()
+
+        # build the response string
+        content = "<h1>Movie of the Day</h1>"
+        content += "<p>" + movie + "</p>"
+>>>>>>> ee0680d4f01c596f269cb7115563342042b763bd
 
         # if we didn't redirect by now, then all is well
         crossed_off_movie_element = "<strike>" + crossed_off_movie + "</strike>"
@@ -145,6 +154,10 @@ class CrossOffMovie(webapp2.RequestHandler):
         content = page_header + "<p>" + confirmation + "</p>" + page_footer
         self.response.write(content)
 
+<<<<<<< HEAD
+=======
+        self.response.write(content)
+>>>>>>> ee0680d4f01c596f269cb7115563342042b763bd
 
 app = webapp2.WSGIApplication([
     ('/', Index),
